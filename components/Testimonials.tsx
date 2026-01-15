@@ -118,7 +118,7 @@ const Testimonials = () => {
                         
                         {/* Quote icon */}
                         <div className="absolute top-4 right-4 text-6xl text-emerald-100 dark:text-emerald-900/50 group-hover:text-emerald-200 dark:group-hover:text-emerald-700 transition-colors duration-300">
-                          "
+                          &quot;
                         </div>
 
                         <div className="relative z-10">
@@ -143,7 +143,7 @@ const Testimonials = () => {
 
                           {/* Testimonial Text */}
                           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 relative z-10 group-hover:text-gray-900 dark:group-hover:text-white transition-colors flex-1">
-                            "{testimonial.text}"
+                            &quot;{testimonial.text}&quot;
                           </p>
 
                           {/* Rating Stars */}
@@ -187,7 +187,7 @@ const Testimonials = () => {
                       >
                         <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.color} opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
                         <div className="absolute top-4 right-4 text-6xl text-emerald-100 dark:text-emerald-900/50 group-hover:text-emerald-200 dark:group-hover:text-emerald-700 transition-colors duration-300">
-                          "
+                          &quot;
                         </div>
                         <div className="relative z-10">
                           <div className="flex items-center gap-4 mb-6">
@@ -208,7 +208,7 @@ const Testimonials = () => {
                             </div>
                           </div>
                           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 relative z-10 group-hover:text-gray-900 dark:group-hover:text-white transition-colors flex-1">
-                            "{testimonial.text}"
+                            &quot;{testimonial.text}&quot;
                           </p>
                           <div className="flex items-center justify-between mt-auto">
                             <div className="flex items-center space-x-1">

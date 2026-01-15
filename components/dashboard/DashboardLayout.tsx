@@ -45,7 +45,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             onClick={() => setSidebarOpen(false)}
           />
         )}
-        <DashboardSidebar sidebarOpen={sidebarOpen} />
+        <DashboardSidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <main className={`flex-1 pt-16 transition-all duration-300 ${
           sidebarOpen 
             ? 'lg:ml-64' 

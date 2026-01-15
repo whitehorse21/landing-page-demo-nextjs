@@ -79,7 +79,7 @@ const AboutUs = () => {
               <div className="p-6 lg:p-8">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Our Mission</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  We believe that travel is more than just visiting places—it's about creating memories, building connections, and discovering yourself.
+                  We believe that travel is more than just visiting places—it&apos;s about creating memories, building connections, and discovering yourself.
                 </p>
               </div>
               <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/5 dark:from-emerald-500/10 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

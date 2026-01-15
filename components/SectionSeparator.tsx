@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useId } from 'react'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 interface SectionSeparatorProps {
@@ -12,7 +12,7 @@ const SectionSeparator = ({ variant, type }: SectionSeparatorProps) => {
   // Support both 'variant' and 'type' props for backward compatibility
   const separatorType = variant || type || 'dots'
   const { elementRef, isVisible } = useScrollAnimation({ triggerOnce: true })
-  const gradientIdRef = useRef(`lineGradient-${Math.random().toString(36).substr(2, 9)}`)
+  const gradientId = useId()
 
   // Variant 1: Expanding Ripples
   if (separatorType === 'dots') {
@@ -55,7 +55,7 @@ const SectionSeparator = ({ variant, type }: SectionSeparatorProps) => {
             <div className="relative w-full max-w-6xl h-full">
               <svg className="w-full h-full" viewBox="0 0 1200 128" preserveAspectRatio="none">
                 <defs>
-                  <linearGradient id={`waveGrad-${gradientIdRef.current}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                  <linearGradient id={`waveGrad-${gradientId}`} x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="transparent" />
                     <stop offset="25%" stopColor="rgb(168, 85, 247)" stopOpacity="0.8" />
                     <stop offset="50%" stopColor="rgb(139, 92, 246)" stopOpacity="1" />
@@ -66,7 +66,7 @@ const SectionSeparator = ({ variant, type }: SectionSeparatorProps) => {
                 <path
                   d="M0,64 Q300,20 600,64 T1200,64"
                   fill="none"
-                  stroke={`url(#waveGrad-${gradientIdRef.current})`}
+                  stroke={`url(#waveGrad-${gradientId})`}
                   strokeWidth="3"
                   className={`transition-opacity duration-1000 ${
                     isVisible ? 'opacity-100 animate-wave-flow' : 'opacity-0'
@@ -75,7 +75,7 @@ const SectionSeparator = ({ variant, type }: SectionSeparatorProps) => {
                 <path
                   d="M0,64 Q300,108 600,64 T1200,64"
                   fill="none"
-                  stroke={`url(#waveGrad-${gradientIdRef.current})`}
+                  stroke={`url(#waveGrad-${gradientId})`}
                   strokeWidth="3"
                   className={`transition-opacity duration-1000 ${
                     isVisible ? 'opacity-100 animate-wave-flow-reverse' : 'opacity-0'

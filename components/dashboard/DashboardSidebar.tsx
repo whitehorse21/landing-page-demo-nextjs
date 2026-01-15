@@ -18,9 +18,10 @@ import {
 
 interface DashboardSidebarProps {
   sidebarOpen: boolean
+  setSidebarOpen: (open: boolean) => void
 }
 
-const DashboardSidebar = ({ sidebarOpen }: DashboardSidebarProps) => {
+const DashboardSidebar = ({ sidebarOpen, setSidebarOpen }: DashboardSidebarProps) => {
   const pathname = usePathname()
   const router = useRouter()
   const { logout } = useAuth()
@@ -57,6 +58,13 @@ const DashboardSidebar = ({ sidebarOpen }: DashboardSidebarProps) => {
     setLogoutDialogOpen(true)
   }
 
+  const handleLinkClick = () => {
+    // Close sidebar on mobile when a menu item is clicked
+    if (window.innerWidth < 1024) {
+      setSidebarOpen(false)
+    }
+  }
+
   return (
     <aside
       className={`fixed left-0 top-16 h-[calc(100vh-4rem)] bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 z-40 ${
@@ -70,6 +78,7 @@ const DashboardSidebar = ({ sidebarOpen }: DashboardSidebarProps) => {
           <Link
             key={item.path}
             href={item.path}
+            onClick={handleLinkClick}
             className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
               isActive(item.path)
                 ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400'

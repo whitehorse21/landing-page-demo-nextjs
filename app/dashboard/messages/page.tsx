@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { SkeletonMessageItem } from '@/components/dashboard/SkeletonLoader'
 import { Card, CardContent } from '@/components/ui/card'
@@ -9,10 +9,36 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 
+interface Message {
+  id: number
+  sender: string
+  text: string
+  time: string
+  isUser: boolean
+}
+
 const Messages = () => {
   const { t } = useLanguage()
   const [selectedChat, setSelectedChat] = useState<number | null>(1)
   const [isLoading, setIsLoading] = useState(true)
+  const [messageInput, setMessageInput] = useState('')
+  const [sentMessageCount, setSentMessageCount] = useState<Record<number, number>>({})
+  
+  // Initialize messages per conversation
+  const [messagesByChat, setMessagesByChat] = useState<Record<number, Message[]>>({
+    1: [
+      { id: 1, sender: 'Travel Support', text: 'Hello! How can I help you today?', time: '10:00 AM', isUser: false },
+      { id: 2, sender: 'You', text: 'I have a question about my Paris booking', time: '10:05 AM', isUser: true },
+      { id: 3, sender: 'Travel Support', text: 'Sure! What would you like to know?', time: '10:06 AM', isUser: false },
+      { id: 4, sender: 'Travel Support', text: 'Your booking has been confirmed!', time: '2 hours ago', isUser: false },
+    ],
+    2: [
+      { id: 1, sender: 'Paris Hotel', text: 'Welcome! Your check-in instructions have been sent.', time: '1 day ago', isUser: false },
+    ],
+    3: [
+      { id: 1, sender: 'Flight Updates', text: 'Your flight is on time. Have a great trip!', time: '2 days ago', isUser: false },
+    ],
+  })
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,20 +47,114 @@ const Messages = () => {
     return () => clearTimeout(timer)
   }, [])
 
+
   const chats = [
-    { id: 1, name: 'Travel Support', lastMessage: 'Your booking has been confirmed!', time: '2 hours ago', unread: 2, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Support' },
-    { id: 2, name: 'Paris Hotel', lastMessage: 'Check-in instructions sent', time: '1 day ago', unread: 0, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Hotel' },
-    { id: 3, name: 'Flight Updates', lastMessage: 'Your flight is on time', time: '2 days ago', unread: 0, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Flight' },
+    { 
+      id: 1, 
+      name: 'Travel Support', 
+      lastMessage: messagesByChat[1]?.[messagesByChat[1].length - 1]?.text || 'Your booking has been confirmed!', 
+      time: '2 hours ago', 
+      unread: 2, 
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Support' 
+    },
+    { 
+      id: 2, 
+      name: 'Paris Hotel', 
+      lastMessage: messagesByChat[2]?.[messagesByChat[2].length - 1]?.text || 'Check-in instructions sent', 
+      time: '1 day ago', 
+      unread: 0, 
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Hotel' 
+    },
+    { 
+      id: 3, 
+      name: 'Flight Updates', 
+      lastMessage: messagesByChat[3]?.[messagesByChat[3].length - 1]?.text || 'Your flight is on time', 
+      time: '2 days ago', 
+      unread: 0, 
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Flight' 
+    },
   ]
 
-  const messages = [
-    { id: 1, sender: 'Travel Support', text: 'Hello! How can I help you today?', time: '10:00 AM', isUser: false },
-    { id: 2, sender: 'You', text: 'I have a question about my Paris booking', time: '10:05 AM', isUser: true },
-    { id: 3, sender: 'Travel Support', text: 'Sure! What would you like to know?', time: '10:06 AM', isUser: false },
-    { id: 4, sender: 'Travel Support', text: 'Your booking has been confirmed!', time: '2 hours ago', isUser: false },
+  // Get current chat messages
+  const currentMessages = useMemo(() => {
+    return selectedChat ? (messagesByChat[selectedChat] || []) : []
+  }, [selectedChat, messagesByChat])
+
+  const fakeResponses = [
+    "Thank you for your message! I'm here to help.",
+    "I understand your concern. Let me check that for you.",
+    "That's a great question! Here's what I found...",
+    "I'll get back to you with more details shortly.",
+    "Is there anything else you'd like to know?",
+    "Perfect! I've noted that down for you.",
   ]
+
+  const getCurrentTime = () => {
+    const now = new Date()
+    return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+  }
 
   const selectedChatData = chats.find(chat => chat.id === selectedChat)
+
+  const handleSendMessage = () => {
+    if (!messageInput.trim() || !selectedChat) return
+
+    const newMessage: Message = {
+      id: Date.now(),
+      sender: 'You',
+      text: messageInput.trim(),
+      time: getCurrentTime(),
+      isUser: true,
+    }
+
+    // Add message to the specific chat
+    setMessagesByChat(prev => ({
+      ...prev,
+      [selectedChat]: [...(prev[selectedChat] || []), newMessage]
+    }))
+    setMessageInput('')
+    
+    // Initialize count if not exists, then increment and get new count
+    let newCount = 1
+    setSentMessageCount(prev => {
+      const currentCount = prev[selectedChat] || 0
+      newCount = currentCount + 1
+      return { ...prev, [selectedChat]: newCount }
+    })
+
+    // After 1-2 messages, send a fake response
+    if (newCount >= 1 && newCount <= 2) {
+      const delay = Math.random() * 2000 + 1500 // 1.5-3.5 seconds delay
+      setTimeout(() => {
+        const randomResponse = fakeResponses[Math.floor(Math.random() * fakeResponses.length)]
+        const fakeMessage: Message = {
+          id: Date.now() + 1,
+          sender: selectedChatData?.name || 'Travel Support',
+          text: randomResponse,
+          time: getCurrentTime(),
+          isUser: false,
+        }
+        setMessagesByChat(prev => ({
+          ...prev,
+          [selectedChat]: [...(prev[selectedChat] || []), fakeMessage]
+        }))
+      }, delay)
+    }
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      handleSendMessage()
+    }
+  }
+
+  // Auto-scroll to bottom when new messages are added
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+  
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [currentMessages])
 
   if (isLoading) {
     return (
@@ -139,7 +259,7 @@ const Messages = () => {
                 </div>
               </div>
               <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                {messages.map((message) => (
+                {currentMessages.map((message) => (
                   <div
                     key={message.id}
                     className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
@@ -162,6 +282,7 @@ const Messages = () => {
                     </div>
                   </div>
                 ))}
+                <div ref={messagesEndRef} />
               </div>
               <div className="p-4 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
                 <div className="flex items-center gap-2">
@@ -169,8 +290,11 @@ const Messages = () => {
                     type="text"
                     placeholder={t('dashboard.messages.typeMessage')}
                     className="flex-1"
+                    value={messageInput}
+                    onChange={(e) => setMessageInput(e.target.value)}
+                    onKeyPress={handleKeyPress}
                   />
-                  <Button>
+                  <Button onClick={handleSendMessage} disabled={!messageInput.trim()}>
                     {t('dashboard.messages.send')}
                   </Button>
                 </div>
