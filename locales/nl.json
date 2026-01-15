@@ -1,0 +1,395 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Over Ons",
+    "service": "Service",
+    "blog": "Blog",
+    "testimonials": "Getuigenissen",
+    "contact": "Contact"
+  },
+  "header": {
+    "login": "Inloggen",
+    "signup": "Registreren"
+  },
+  "auth": {
+    "back": "Terug",
+    "login": {
+      "title": "Inloggen",
+      "subtitle": "Voer je inloggegevens in om toegang te krijgen tot je account",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "forgotPassword": "Wachtwoord vergeten?",
+      "rememberMe": "Onthoud mij",
+      "submit": "Inloggen",
+      "noAccount": "Heb je nog geen account?",
+      "signUp": "Registreren",
+      "welcomeBack": "Welkom Terug!",
+      "welcomeMessage": "Begin je volgende avontuur met ons"
+    },
+    "signup": {
+      "title": "Account Aanmaken",
+      "subtitle": "Vul je gegevens in om te beginnen",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "email": "E-mailadres",
+      "phone": "Telefoonnummer",
+      "password": "Wachtwoord",
+      "confirmPassword": "Bevestig Wachtwoord",
+      "agreeTerms": "Ik ga akkoord met de",
+      "termsOfService": "Servicevoorwaarden",
+      "subscribeNewsletter": "Abonneren op nieuwsbrief voor reisaanbiedingen en updates",
+      "submit": "Account Aanmaken",
+      "hasAccount": "Heb je al een account?",
+      "signIn": "Inloggen",
+      "joinUs": "Doe Vandaag Mee!",
+      "joinMessage": "Maak je account aan en begin de wereld te verkennen"
+    }
+  },
+  "hero": {
+    "welcome": "Welkom bij TripHive",
+    "title": "Word Lid van de Bijenkorf en Verken de",
+    "title.world": "Wereld",
+    "description": "TripHive is een gemeenschap van gelijkgestemde reizigers die een passie delen voor het verkennen van de wereld. Onze website biedt reisinspiratie, advies en inzichten van ervaren reizigers, evenals tools om je volgende avontuur te plannen en te boeken.",
+    "feature1": "✈️ Ontdek verborgen parels en populaire bestemmingen",
+    "feature2": "🌍 Verbind met medereizigers wereldwijd",
+    "feature3": "📸 Deel je avonturen en laat je inspireren",
+    "feature4": "🎯 Plan je perfecte reis met onze tools",
+    "button": {
+      "getStarted": "Aan de Slag",
+      "watchDemo": "Bekijk Demo"
+    },
+    "stats": {
+      "travelers": "Actieve Reizigers",
+      "destinations": "Bestemmingen",
+      "rating": "Beoordeling"
+    }
+  },
+  "about": {
+    "title": "Over Ons",
+    "heading": "Verken Alle Hoeken Van De",
+    "heading.world": "Wereld",
+    "heading.with": "Met Ons",
+    "description": "TripHive is een gemeenschap van gelijkgestemde reizigers die een passie delen voor het verkennen van de wereld. Onze website biedt reisinspiratie, advies en inzichten van ervaren reizigers, evenals tools om je volgende avontuur te plannen en te boeken.",
+    "destinations": {
+      "title": "Populaire Bestemmingen"
+    }
+  },
+  "services": {
+    "title": "Wij Bieden De Beste Services",
+    "description": "TripHive biedt uitzonderlijke reisdiensten om je reis onvergetelijk te maken. Kies uit ons assortiment premium diensten ontworpen voor elk type reiziger."
+  },
+  "blog": {
+    "title": "Laatste Reisverhalen",
+    "description": "Ontdek inspirerende reisverhalen, tips en gidsen van onze gemeenschap van reizigers.",
+    "readMore": "Lees Meer",
+    "backToBlog": "Terug naar Blog"
+  },
+  "experience": {
+    "title": "Onze Ervaring",
+    "heading": "Met Onze Ervaring Zullen We Je",
+    "heading.serve": "Bedienen",
+    "description": "Meer dan een decennium expertise in het creëren van onvergetelijke reiservaringen. Ons team van reisprofessionals is toegewijd aan het maken van je reis uitzonderlijk.",
+    "stats": {
+      "years": "Jaar Ervaring",
+      "destinations": "Bestemmingen",
+      "travelers": "Blije Reizigers"
+    },
+    "trust": {
+      "title": "Waarom Reizigers Ons Vertrouwen"
+    }
+  },
+  "testimonials": {
+    "title": "Getuigenissen",
+    "heading": "Wat Onze Klanten",
+    "heading.say": "Over Ons Zeggen",
+    "description": "Geloof ons niet alleen op ons woord. Dit is wat reizigers van over de hele wereld te zeggen hebben over hun ervaringen met TripHive."
+  },
+  "howItWorks": {
+    "subtitle": "Hoe Het Werkt",
+    "title": "Eenvoudige Stappen Om Je Reis Te Beginnen",
+    "description": "Beginnen met TripHive is eenvoudig. Volg deze eenvoudige stappen om je reisavontuur te beginnen.",
+    "step1": {
+      "title": "Maak Je Account Aan",
+      "description": "Meld je binnen enkele minuten aan met je e-mail of sociale media-account. Word lid van onze gemeenschap van reizigers."
+    },
+    "step2": {
+      "title": "Plan Je Reis",
+      "description": "Blader door bestemmingen, lees beoordelingen en gebruik onze planningshulpmiddelen om je perfecte reisroute te maken."
+    },
+    "step3": {
+      "title": "Boek en Bevestig",
+      "description": "Beveilig je boekingen met onze vertrouwde partners. Krijg directe bevestigingen en reisdocumenten."
+    },
+    "step4": {
+      "title": "Geniet Van Je Avontuur",
+      "description": "Reis met vertrouwen wetende dat je 24/7 ondersteuning hebt en toegang tot onze reisgemeenschap."
+    },
+    "cta": "Begin Vandaag"
+  },
+  "subscribe": {
+    "title": "Blijf Op De Hoogte",
+    "heading": "Abonneer Je Om Informatie, Laatste Nieuws En Andere Interessante Aanbiedingen Te Ontvangen",
+    "description": "Word lid van onze nieuwsbrief en wees de eerste die op de hoogte is van exclusieve deals, reistips en nieuwe bestemmingslanceringen.",
+    "placeholder": "Voer je e-mailadres in",
+    "button": "Nu Abonneren",
+    "privacy": "Door je te abonneren, ga je akkoord met ons Privacybeleid. Je kunt je op elk moment uitschrijven.",
+    "subscribers": "Abonnees",
+    "updates": "Updates",
+    "deals": "Deals",
+    "thankYou": "Bedankt voor je aanmelding! Controleer je e-mail voor bevestiging."
+  },
+  "footer": {
+    "company": "Bedrijf",
+    "support": "Ondersteuning",
+    "legal": "Juridisch",
+    "contact": "Neem Contact Op",
+    "links": {
+      "home": "Home",
+      "about": "Over Ons",
+      "services": "Diensten",
+      "howItWorks": "Hoe Het Werkt",
+      "blogs": "Blogs",
+      "contactUs": "Neem Contact Op",
+      "helpCenter": "Helpcentrum",
+      "safetyCenter": "Veiligheidscentrum",
+      "communityGuidelines": "Communityrichtlijnen",
+      "cookiesPolicy": "Cookiebeleid",
+      "privacyPolicy": "Privacybeleid",
+      "termsOfService": "Servicevoorwaarden",
+      "blog": "Blog",
+      "service": "Dienst"
+    },
+    "copyright": "© {year} Travels'. Alle rechten voorbehouden."
+  },
+  "dashboard": {
+    "menu": {
+      "dashboard": "Dashboard",
+      "browseCities": "Steden Bladeren",
+      "bookings": "Boekingen",
+      "payments": "Betalingen",
+      "messages": "Berichten",
+      "settings": "Instellingen",
+      "logout": "Uitloggen"
+    },
+    "logout": {
+      "confirmTitle": "Uitloggen Bevestigen",
+      "confirmMessage": "Weet je zeker dat je wilt uitloggen? Je moet opnieuw inloggen om toegang te krijgen tot je dashboard.",
+      "cancel": "Annuleren",
+      "confirm": "Ja, Uitloggen"
+    },
+    "header": {
+      "notifications": "Meldingen",
+      "noNotifications": "Geen meldingen"
+    },
+    "dashboard": {
+      "title": "Welkom terug, {name}!",
+      "subtitle": "Dit is wat er gebeurt met je reizen vandaag.",
+      "stats": {
+        "totalBookings": "Totaal Boekingen",
+        "upcomingTrips": "Aankomende Reizen",
+        "totalSpent": "Totaal Besteed",
+        "messages": "Berichten",
+        "thisMonth": "+{value} deze maand",
+        "nextTrip": "Volgende: {destination} over {days} dagen",
+        "unread": "{count} ongelezen"
+      },
+      "charts": {
+        "bookingsOverview": "Boekingen Overzicht",
+        "spendingTrend": "Uitgaventrend"
+      },
+      "recentBookings": "Recente Boekingen",
+      "departure": "Vertrek"
+    },
+    "browseCities": {
+      "title": "Steden Bladeren",
+      "subtitle": "Ontdek geweldige bestemmingen voor je volgende avontuur",
+      "searchPlaceholder": "Zoek steden...",
+      "bookNow": "Nu Boeken",
+      "perNight": "per nacht",
+      "loadMore": "Meer Laden",
+      "moreAvailable": "meer beschikbaar"
+    },
+    "bookings": {
+      "title": "Mijn Boekingen",
+      "subtitle": "Beheer je huidige en eerdere reisboekingen",
+      "tabs": {
+        "current": "Huidig",
+        "past": "Verleden"
+      },
+      "fields": {
+        "checkIn": "Inchecken",
+        "checkOut": "Uitchecken",
+        "guests": "Gasten",
+        "bookingId": "Boekings-ID"
+      },
+      "status": {
+        "confirmed": "Bevestigd",
+        "pending": "In Afwachting",
+        "completed": "Voltooid"
+      },
+      "cancel": "Annuleren",
+      "details": {
+        "title": "Boekingsdetails",
+        "duration": "Duur",
+        "nights": "{count} nacht",
+        "nights_plural": "{count} nachten",
+        "guest": "{count} gast",
+        "guest_plural": "{count} gasten",
+        "priceSummary": "Prijsoverzicht",
+        "totalAmount": "Totaalbedrag",
+        "paymentCompleted": "Betaling voltooid op {date}",
+        "actions": {
+          "downloadReceipt": "Bon Downloaden",
+          "cancelBooking": "Boeking Annuleren"
+        }
+      },
+      "pagination": {
+        "showing": "Tonen",
+        "to": "tot",
+        "of": "van",
+        "results": "resultados",
+        "previous": "Vorige",
+        "next": "Volgende",
+        "page": "Pagina"
+      }
+    },
+    "payments": {
+      "title": "Betalingen en Transacties",
+      "subtitle": "Bekijk je betalingsgeschiedenis en transactiedetails",
+      "summary": {
+        "totalSpent": "Totaal Besteed",
+        "pendingPayments": "Openstaande Betalingen",
+        "totalTransactions": "Totaal Transacties"
+      },
+      "chart": {
+        "paymentHistory": "Betalingsgeschiedenis",
+        "payments": "Betalingen",
+        "refunds": "Terugbetalingen"
+      },
+      "transactionHistory": "Transactiegeschiedenis",
+      "table": {
+        "date": "Datum",
+        "description": "Beschrijving",
+        "method": "Methode",
+        "amount": "Bedrag",
+        "status": "Status"
+      },
+      "status": {
+        "completed": "Voltooid",
+        "pending": "In Afwachting"
+      },
+      "filter": {
+        "status": "Filter op Status",
+        "all": "Alles"
+      },
+      "type": {
+        "payment": "Betaling",
+        "refund": "Reembolso"
+      },
+      "descriptions": {
+        "parisTrip": "Parijs Reisboeking",
+        "tokyoTrip": "Tokyo Reisboeking",
+        "barcelonaTrip": "Barcelona Reisboeking",
+        "londonTrip": "Londen Reisboeking",
+        "romeTrip": "Rome Reisboeking",
+        "dubaiTrip": "Dubai Reisboeking",
+        "newYorkTrip": "New York Reisboeking",
+        "sydneyTrip": "Sydney Reisboeking",
+        "baliTrip": "Bali Reisboeking",
+        "santoriniTrip": "Santorini Reisboeking",
+        "cancelledLondonTrip": "Geannuleerde Londen Reis",
+        "cancelledRomeTrip": "Geannuleerde Rome Reis",
+        "amsterdamTrip": "Amsterdam Reisboeking",
+        "pragueTrip": "Prague Reisboeking",
+        "viennaTrip": "Wenen Reisboeking",
+        "istanbulTrip": "Istanbul Reisboeking",
+        "lisbonTrip": "Lissabon Reisboeking",
+        "athensTrip": "Athene Reisboeking",
+        "cancelledAmsterdamTrip": "Geannuleerde Amsterdam Reis",
+        "cancelledPragueTrip": "Geannuleerde Prague Reis"
+      },
+      "pagination": {
+        "showing": "Tonen",
+        "to": "tot",
+        "of": "van",
+        "results": "resultaten",
+        "previous": "Vorige",
+        "next": "Volgende",
+        "page": "Pagina"
+      }
+    },
+    "messages": {
+      "title": "Berichten",
+      "subtitle": "Chat met ondersteuning en reispartners",
+      "searchPlaceholder": "Zoek gesprekken...",
+      "online": "Online",
+      "selectConversation": "Selecteer een gesprek om te beginnen met chatten",
+      "typeMessage": "Typ een bericht...",
+      "send": "Verzenden"
+    },
+    "settings": {
+      "title": "Instellingen",
+      "subtitle": "Beheer je accountinstellingen en voorkeuren",
+      "tabs": {
+        "profile": "Profiel",
+        "security": "Beveiliging",
+        "preferences": "Voorkeuren"
+      },
+      "profile": {
+        "title": "Profielinformatie",
+        "changePhoto": "Foto Wijzigen",
+        "firstName": "Voornaam",
+        "lastName": "Achternaam",
+        "email": "E-mail",
+        "phone": "Telefoon",
+        "bio": "Bio",
+        "saveChanges": "Wijzigingen Opslaan"
+      },
+      "security": {
+        "title": "Beveiligingsinstellingen",
+        "currentPassword": "Huidig Wachtwoord",
+        "newPassword": "Nieuw Wachtwoord",
+        "confirmNewPassword": "Bevestig Nieuw Wachtwoord",
+        "updatePassword": "Wachtwoord Bijwerken"
+      },
+      "preferences": {
+        "title": "Voorkeuren",
+        "emailNotifications": "E-mailmeldingen",
+        "emailNotificationsDescription": "Ontvang e-mailupdates over je boekingen",
+        "smsNotifications": "SMS-meldingen",
+        "smsNotificationsDescription": "Ontvang SMS-updates over je reizen"
+      }
+    },
+    "booking": {
+      "modal": {
+        "checkIn": "Incheckdatum",
+        "checkOut": "Uitcheckdatum",
+        "guests": "Aantal Gasten",
+        "paymentMethod": "Betalingsmethode",
+        "creditCard": "Creditcard",
+        "debitCard": "Debetkaart",
+        "paypal": "PayPal",
+        "bankTransfer": "Bankoverschrijving",
+        "summary": {
+          "nights": "{price} × {nights} nachten",
+          "guestsNights": "{guests} {guestLabel} × {nights} nachten",
+          "total": "Totaal",
+          "confirm": "Boeking Bevestigen - ${amount}",
+          "processing": "Verwerken..."
+        },
+        "success": "Boeking bevestigd! Bekijk je boekingspagina voor details."
+      }
+    },
+    "notifications": {
+      "bookingConfirmed": "Je boeking naar {destination} is bevestigd",
+      "paymentReceived": "Betaling ontvangen voor {destination} reis",
+      "newMessage": "Nieuw bericht van reisagent",
+      "time": {
+        "hoursAgo": "{count} uur geleden",
+        "hourAgo": "{count} uur geleden",
+        "daysAgo": "{count} dagen geleden",
+        "dayAgo": "{count} dag geleden"
+      }
+    }
+  }
+}

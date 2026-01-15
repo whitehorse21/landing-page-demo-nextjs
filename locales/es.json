@@ -1,0 +1,395 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "service": "Servicio",
+    "blog": "Blog",
+    "testimonials": "Testimonios",
+    "contact": "Contacto"
+  },
+  "header": {
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse"
+  },
+  "auth": {
+    "back": "Atrás",
+    "login": {
+      "title": "Iniciar Sesión",
+      "subtitle": "Ingresa tus credenciales para acceder a tu cuenta",
+      "email": "Dirección de Correo",
+      "password": "Contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "rememberMe": "Recordarme",
+      "submit": "Iniciar Sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUp": "Registrarse",
+      "welcomeBack": "¡Bienvenido de Nuevo!",
+      "welcomeMessage": "Comienza tu próxima aventura con nosotros"
+    },
+    "signup": {
+      "title": "Crear Cuenta",
+      "subtitle": "Completa tus datos para comenzar",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Dirección de Correo",
+      "phone": "Número de Teléfono",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar Contraseña",
+      "agreeTerms": "Acepto los",
+      "termsOfService": "Términos de Servicio",
+      "subscribeNewsletter": "Suscribirse al boletín para ofertas de viaje y actualizaciones",
+      "submit": "Crear Cuenta",
+      "hasAccount": "¿Ya tienes una cuenta?",
+      "signIn": "Iniciar sesión",
+      "joinUs": "¡Únete Hoy!",
+      "joinMessage": "Crea tu cuenta y comienza a explorar el mundo"
+    }
+  },
+  "hero": {
+    "welcome": "Bienvenido a TripHive",
+    "title": "Únete a la Colmena y Explora el",
+    "title.world": "Mundo",
+    "description": "TripHive es una comunidad de viajeros con ideas afines que comparten una pasión por explorar el mundo. Nuestro sitio web ofrece inspiración, consejos e información de viajeros experimentados, así como herramientas para planificar y reservar tu próxima aventura.",
+    "feature1": "✈️ Descubre joyas ocultas y destinos populares",
+    "feature2": "🌍 Conéctate con otros viajeros de todo el mundo",
+    "feature3": "📸 Comparte tus aventuras e inspírate",
+    "feature4": "🎯 Planifica tu viaje perfecto con nuestras herramientas",
+    "button": {
+      "getStarted": "Comenzar",
+      "watchDemo": "Ver Demo"
+    },
+    "stats": {
+      "travelers": "Viajeros Activos",
+      "destinations": "Destinos",
+      "rating": "Calificación"
+    }
+  },
+  "about": {
+    "title": "Nosotros",
+    "heading": "Explora Todos Los Rincones Del",
+    "heading.world": "Mundo",
+    "heading.with": "Con Nosotros",
+    "description": "TripHive es una comunidad de viajeros con ideas afines que comparten una pasión por explorar el mundo. Nuestro sitio web ofrece inspiración, consejos e información de viajeros experimentados, así como herramientas para planificar y reservar tu próxima aventura.",
+    "destinations": {
+      "title": "Destinos Populares"
+    }
+  },
+  "services": {
+    "title": "Ofrecemos Los Mejores Servicios",
+    "description": "TripHive proporciona servicios de viaje excepcionales para hacer que tu viaje sea inolvidable. Elige entre nuestra gama de servicios premium diseñados para todo tipo de viajero."
+  },
+  "blog": {
+    "title": "Últimas Historias de Viaje",
+    "description": "Descubre historias de viaje inspiradoras, consejos y guías de nuestra comunidad de viajeros.",
+    "readMore": "Leer Más",
+    "backToBlog": "Volver al Blog"
+  },
+  "experience": {
+    "title": "Nuestra Experiencia",
+    "heading": "Con Nuestra Experiencia Te",
+    "heading.serve": "Serviremos",
+    "description": "Más de una década de experiencia en la creación de experiencias de viaje inolvidables. Nuestro equipo de profesionales de viajes está dedicado a hacer que tu viaje sea excepcional.",
+    "stats": {
+      "years": "Años de Experiencia",
+      "destinations": "Destinos",
+      "travelers": "Viajeros Felices"
+    },
+    "trust": {
+      "title": "Por Qué Los Viajeros Confían En Nosotros"
+    }
+  },
+  "testimonials": {
+    "title": "Testimonios",
+    "heading": "Lo Que Nuestros Clientes",
+    "heading.say": "Dicen Sobre Nosotros",
+    "description": "No solo confíes en nuestra palabra. Esto es lo que los viajeros de todo el mundo tienen que decir sobre sus experiencias con TripHive."
+  },
+  "howItWorks": {
+    "subtitle": "Cómo Funciona",
+    "title": "Pasos Simples Para Comenzar Tu Viaje",
+    "description": "Comenzar con TripHive es fácil. Sigue estos simples pasos para comenzar tu aventura de viaje.",
+    "step1": {
+      "title": "Crea Tu Cuenta",
+      "description": "Regístrate en minutos con tu correo electrónico o cuenta de redes sociales. Únete a nuestra comunidad de viajeros."
+    },
+    "step2": {
+      "title": "Planifica Tu Viaje",
+      "description": "Explora destinos, lee reseñas y usa nuestras herramientas de planificación para crear tu itinerario perfecto."
+    },
+    "step3": {
+      "title": "Reserva y Confirma",
+      "description": "Asegura tus reservas con nuestros socios de confianza. Obtén confirmaciones instantáneas y documentos de viaje."
+    },
+    "step4": {
+      "title": "Disfruta Tu Aventura",
+      "description": "Viaja con confianza sabiendo que tienes soporte 24/7 y acceso a nuestra comunidad de viajes."
+    },
+    "cta": "Comienza Hoy"
+  },
+  "subscribe": {
+    "title": "Mantente Actualizado",
+    "heading": "Suscríbete Para Obtener Información, Últimas Noticias Y Otras Ofertas Interesantes",
+    "description": "Únete a nuestro boletín y sé el primero en conocer ofertas exclusivas, consejos de viaje y nuevos lanzamientos de destinos.",
+    "placeholder": "Ingresa tu dirección de correo",
+    "button": "Suscribirse Ahora",
+    "privacy": "Al suscribirte, aceptas nuestra Política de Privacidad. Cancela la suscripción en cualquier momento.",
+    "subscribers": "Suscriptores",
+    "updates": "Actualizaciones",
+    "deals": "Ofertas",
+    "thankYou": "¡Gracias por suscribirte! Revisa tu correo para confirmar."
+  },
+  "footer": {
+    "company": "Empresa",
+    "support": "Soporte",
+    "legal": "Legal",
+    "contact": "Contáctanos",
+    "links": {
+      "home": "Inicio",
+      "about": "Nosotros",
+      "services": "Servicios",
+      "howItWorks": "Cómo Funciona",
+      "blogs": "Blogs",
+      "contactUs": "Contáctanos",
+      "helpCenter": "Centro de Ayuda",
+      "safetyCenter": "Centro de Seguridad",
+      "communityGuidelines": "Pautas de la Comunidad",
+      "cookiesPolicy": "Política de Cookies",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos de Servicio",
+      "blog": "Blog",
+      "service": "Servicio"
+    },
+    "copyright": "© {year} Travels'. Todos los derechos reservados."
+  },
+  "dashboard": {
+    "menu": {
+      "dashboard": "Panel de Control",
+      "browseCities": "Explorar Ciudades",
+      "bookings": "Reservas",
+      "payments": "Pagos",
+      "messages": "Mensajes",
+      "settings": "Configuración",
+      "logout": "Cerrar Sesión"
+    },
+    "logout": {
+      "confirmTitle": "Confirmar Cierre de Sesión",
+      "confirmMessage": "¿Estás seguro de que quieres cerrar sesión? Necesitarás iniciar sesión nuevamente para acceder a tu panel de control.",
+      "cancel": "Cancelar",
+      "confirm": "Sí, Cerrar Sesión"
+    },
+    "header": {
+      "notifications": "Notificaciones",
+      "noNotifications": "No hay notificaciones"
+    },
+    "dashboard": {
+      "title": "¡Bienvenido de nuevo, {name}!",
+      "subtitle": "Esto es lo que está pasando con tus viajes hoy.",
+      "stats": {
+        "totalBookings": "Reservas Totales",
+        "upcomingTrips": "Próximos Viajes",
+        "totalSpent": "Total Gastado",
+        "messages": "Mensajes",
+        "thisMonth": "+{value} este mes",
+        "nextTrip": "Próximo: {destination} en {days} días",
+        "unread": "{count} sin leer"
+      },
+      "charts": {
+        "bookingsOverview": "Resumen de Reservas",
+        "spendingTrend": "Tendencia de Gastos"
+      },
+      "recentBookings": "Reservas Recientes",
+      "departure": "Salida"
+    },
+    "browseCities": {
+      "title": "Explorar Ciudades",
+      "subtitle": "Descubre destinos increíbles para tu próxima aventura",
+      "searchPlaceholder": "Buscar ciudades...",
+      "bookNow": "Reservar Ahora",
+      "perNight": "por noche",
+      "loadMore": "Cargar Más",
+      "moreAvailable": "más disponibles"
+    },
+    "bookings": {
+      "title": "Mis Reservas",
+      "subtitle": "Gestiona tus reservas de viaje actuales y pasadas",
+      "tabs": {
+        "current": "Actuales",
+        "past": "Pasadas"
+      },
+      "fields": {
+        "checkIn": "Entrada",
+        "checkOut": "Salida",
+        "guests": "Huéspedes",
+        "bookingId": "ID de Reserva"
+      },
+      "status": {
+        "confirmed": "Confirmada",
+        "pending": "Pendiente",
+        "completed": "Completada"
+      },
+      "cancel": "Cancelar",
+      "details": {
+        "title": "Detalles de la Reserva",
+        "duration": "Duración",
+        "nights": "{count} noche",
+        "nights_plural": "{count} noches",
+        "guest": "{count} huésped",
+        "guest_plural": "{count} huéspedes",
+        "priceSummary": "Resumen de Precios",
+        "totalAmount": "Monto Total",
+        "paymentCompleted": "Pago completado el {date}",
+        "actions": {
+          "downloadReceipt": "Descargar Recibo",
+          "cancelBooking": "Cancelar Reserva"
+        }
+      },
+      "pagination": {
+        "showing": "Mostrando",
+        "to": "a",
+        "of": "de",
+        "results": "resultados",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "page": "Página"
+      }
+    },
+    "payments": {
+      "title": "Pagos y Transacciones",
+      "subtitle": "Ver tu historial de pagos y detalles de transacciones",
+      "summary": {
+        "totalSpent": "Total Gastado",
+        "pendingPayments": "Pagos Pendientes",
+        "totalTransactions": "Transacciones Totales"
+      },
+      "chart": {
+        "paymentHistory": "Historial de Pagos",
+        "payments": "Pagos",
+        "refunds": "Reembolsos"
+      },
+      "transactionHistory": "Historial de Transacciones",
+      "table": {
+        "date": "Fecha",
+        "description": "Descripción",
+        "method": "Método",
+        "amount": "Monto",
+        "status": "Estado"
+      },
+      "status": {
+        "completed": "Completado",
+        "pending": "Pendiente"
+      },
+      "filter": {
+        "status": "Filtrar por Estado",
+        "all": "Todos"
+      },
+      "type": {
+        "payment": "Pago",
+        "refund": "Reembolso"
+      },
+      "descriptions": {
+        "parisTrip": "Reserva de Viaje a París",
+        "tokyoTrip": "Reserva de Viaje a Tokio",
+        "barcelonaTrip": "Reserva de Viaje a Barcelona",
+        "londonTrip": "Reserva de Viaje a Londres",
+        "romeTrip": "Reserva de Viaje a Roma",
+        "dubaiTrip": "Reserva de Viaje a Dubái",
+        "newYorkTrip": "Reserva de Viaje a Nueva York",
+        "sydneyTrip": "Reserva de Viaje a Sídney",
+        "baliTrip": "Reserva de Viaje a Bali",
+        "santoriniTrip": "Reserva de Viaje a Santorini",
+        "cancelledLondonTrip": "Viaje a Londres Cancelado",
+        "cancelledRomeTrip": "Viaje a Roma Cancelado",
+        "amsterdamTrip": "Reserva de Viaje a Ámsterdam",
+        "pragueTrip": "Reserva de Viaje a Praga",
+        "viennaTrip": "Reserva de Viaje a Viena",
+        "istanbulTrip": "Reserva de Viaje a Estambul",
+        "lisbonTrip": "Reserva de Viaje a Lisboa",
+        "athensTrip": "Reserva de Viaje a Atenas",
+        "cancelledAmsterdamTrip": "Viaje a Ámsterdam Cancelado",
+        "cancelledPragueTrip": "Viaje a Praga Cancelado"
+      },
+      "pagination": {
+        "showing": "Mostrando",
+        "to": "a",
+        "of": "de",
+        "results": "resultados",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "page": "Página"
+      }
+    },
+    "messages": {
+      "title": "Mensajes",
+      "subtitle": "Chatea con soporte y socios de viaje",
+      "searchPlaceholder": "Buscar conversaciones...",
+      "online": "En línea",
+      "selectConversation": "Selecciona una conversación para comenzar a chatear",
+      "typeMessage": "Escribe un mensaje...",
+      "send": "Enviar"
+    },
+    "settings": {
+      "title": "Configuración",
+      "subtitle": "Gestiona la configuración y preferencias de tu cuenta",
+      "tabs": {
+        "profile": "Perfil",
+        "security": "Seguridad",
+        "preferences": "Preferencias"
+      },
+      "profile": {
+        "title": "Información del Perfil",
+        "changePhoto": "Cambiar Foto",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo Electrónico",
+        "phone": "Teléfono",
+        "bio": "Biografía",
+        "saveChanges": "Guardar Cambios"
+      },
+      "security": {
+        "title": "Configuración de Seguridad",
+        "currentPassword": "Contraseña Actual",
+        "newPassword": "Nueva Contraseña",
+        "confirmNewPassword": "Confirmar Nueva Contraseña",
+        "updatePassword": "Actualizar Contraseña"
+      },
+      "preferences": {
+        "title": "Preferencias",
+        "emailNotifications": "Notificaciones por Correo",
+        "emailNotificationsDescription": "Recibir actualizaciones por correo sobre tus reservas",
+        "smsNotifications": "Notificaciones por SMS",
+        "smsNotificationsDescription": "Recibir actualizaciones por SMS sobre tus viajes"
+      }
+    },
+    "booking": {
+      "modal": {
+        "checkIn": "Fecha de Entrada",
+        "checkOut": "Fecha de Salida",
+        "guests": "Número de Huéspedes",
+        "paymentMethod": "Método de Pago",
+        "creditCard": "Tarjeta de Crédito",
+        "debitCard": "Tarjeta de Débito",
+        "paypal": "PayPal",
+        "bankTransfer": "Transferencia Bancaria",
+        "summary": {
+          "nights": "{price} × {nights} noches",
+          "guestsNights": "{guests} {guestLabel} × {nights} noches",
+          "total": "Total",
+          "confirm": "Confirmar Reserva - ${amount}",
+          "processing": "Procesando..."
+        },
+        "success": "¡Reserva confirmada! Consulta tu página de reservas para más detalles."
+      }
+    },
+    "notifications": {
+      "bookingConfirmed": "Tu reserva a {destination} ha sido confirmada",
+      "paymentReceived": "Pago recibido para el viaje a {destination}",
+      "newMessage": "Nuevo mensaje del agente de viajes",
+      "time": {
+        "hoursAgo": "hace {count} horas",
+        "hourAgo": "hace {count} hora",
+        "daysAgo": "hace {count} días",
+        "dayAgo": "hace {count} día"
+      }
+    }
+  }
+}
