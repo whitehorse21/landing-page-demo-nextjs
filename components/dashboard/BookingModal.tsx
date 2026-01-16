@@ -98,8 +98,17 @@ const BookingModal = ({ isOpen, onClose, city }: BookingModalProps) => {
   if (!city) return null
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto p-0">
+    <Dialog open={isOpen} onOpenChange={(open) => {
+      // Only close when explicitly set to false (via close button), not on outside click
+      if (!open) {
+        onClose()
+      }
+    }}>
+      <DialogContent 
+        className="max-w-5xl max-h-[90vh] overflow-y-auto p-0"
+        onInteractOutside={(e) => e.preventDefault()}
+        onPointerDownOutside={(e) => e.preventDefault()}
+      >
         <div className="p-6 bg-gray-100 dark:bg-gray-900">
           <div className="relative h-96 rounded-lg overflow-hidden mb-4 bg-gray-200 dark:bg-gray-800">
             <img

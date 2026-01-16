@@ -61,7 +61,6 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
       {/* Blur Background */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-md modal-backdrop-bg"
-        onClick={onClose}
       ></div>
 
       {/* Modal Content */}

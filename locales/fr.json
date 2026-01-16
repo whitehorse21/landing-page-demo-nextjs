@@ -198,7 +198,15 @@
         "spendingTrend": "Tendance des Dépenses"
       },
       "recentBookings": "Réservations Récentes",
-      "departure": "Départ"
+      "departure": "Départ",
+      "recentReviews": "Avis Récents",
+      "reviewedOn": "Avisé le",
+      "recentMessages": "Messages Récents",
+      "recentNews": "Actualités Récentes",
+      "tabs": {
+        "bookings": "Réservations",
+        "reviews": "Avis"
+      }
     },
     "browseCities": {
       "title": "Parcourir les Villes",
@@ -207,20 +215,28 @@
       "bookNow": "Réserver Maintenant",
       "perNight": "par nuit",
       "loadMore": "Charger Plus",
-      "moreAvailable": "plus disponibles"
+      "moreAvailable": "plus disponibles",
+      "gridView": "Vue Grille",
+      "listView": "Vue Liste"
     },
     "bookings": {
       "title": "Mes Réservations",
       "subtitle": "Gérez vos réservations de voyage actuelles et passées",
-      "tabs": {
-        "current": "Actuelles",
-        "past": "Passées"
+      "filter": {
+        "status": "Filtrer par Statut",
+        "all": "Tous"
       },
       "fields": {
         "checkIn": "Arrivée",
         "checkOut": "Départ",
         "guests": "Invités",
         "bookingId": "ID de Réservation"
+      },
+      "table": {
+        "destination": "Destination",
+        "amount": "Montant",
+        "status": "Statut",
+        "actions": "Actions"
       },
       "status": {
         "confirmed": "Confirmée",
@@ -242,6 +258,22 @@
           "downloadReceipt": "Télécharger le Reçu",
           "cancelBooking": "Annuler la Réservation"
         }
+      },
+      "review": {
+        "title": "Laisser un Avis",
+        "yourReview": "Votre Avis",
+        "rating": "Note",
+        "comment": "Commentaire",
+        "commentPlaceholder": "Partagez votre expérience...",
+        "submit": "Soumettre l'Avis",
+        "submitting": "Envoi en cours...",
+        "submitted": "Avis Soumis",
+        "submittedMessage": "Merci pour votre avis !",
+        "alreadyReviewed": "Vous avez déjà laissé un avis pour cette réservation",
+        "viewReview": "Voir Votre Avis",
+        "postedOn": "Publié le",
+        "edit": "Modifier l'Avis",
+        "delete": "Supprimer l'Avis"
       },
       "pagination": {
         "showing": "Affichage",
@@ -284,7 +316,31 @@
       },
       "type": {
         "payment": "Paiement",
-        "refund": "Remboursement"
+        "refund": "Remboursement",
+        "payment_plural": "Paiements",
+        "refund_plural": "Remboursements"
+      },
+      "methods": {
+        "creditCard": "Carte de Crédit",
+        "debitCard": "Carte de Débit",
+        "paypal": "PayPal"
+      },
+      "summary": {
+        "spent": "dépensé",
+        "pending": "en attente"
+      },
+      "details": {
+        "title": "Détails de la Transaction",
+        "transactionId": "ID de Transaction",
+        "description": "Description",
+        "type": "Type",
+        "method": "Méthode de Paiement",
+        "date": "Date",
+        "amount": "Montant",
+        "actions": {
+          "downloadReceipt": "Télécharger le Reçu",
+          "requestRefund": "Demander un Remboursement"
+        }
       },
       "descriptions": {
         "parisTrip": "Réservation de Voyage à Paris",
@@ -325,7 +381,23 @@
       "online": "En ligne",
       "selectConversation": "Sélectionnez une conversation pour commencer à discuter",
       "typeMessage": "Tapez un message...",
-      "send": "Envoyer"
+      "send": "Envoyer",
+      "attach": "Joindre",
+      "attachImage": "Joindre une Image",
+      "attachVideo": "Joindre une Vidéo",
+      "attachFile": "Joindre un Fichier",
+      "attachGif": "Joindre un GIF",
+      "attachSticker": "Joindre un Sticker",
+      "selectGif": "Sélectionnez un GIF",
+      "selectSticker": "Sélectionnez un Sticker",
+      "viewFullScreen": "Voir en Plein Écran",
+      "fullScreenImage": "Image en Plein Écran",
+      "fullScreenVideo": "Vidéo en Plein Écran",
+      "closeFullScreen": "Fermer le Plein Écran",
+      "errors": {
+        "invalidImage": "Veuillez sélectionner un fichier image valide",
+        "invalidVideo": "Veuillez sélectionner un fichier vidéo valide"
+      }
     },
     "settings": {
       "title": "Paramètres",
@@ -384,6 +456,13 @@
       "bookingConfirmed": "Votre réservation à {destination} a été confirmée",
       "paymentReceived": "Paiement reçu pour le voyage à {destination}",
       "newMessage": "Nouveau message de l'agent de voyage",
+      "reviewRequest": "Veuillez laisser un avis pour votre voyage à {destination}",
+      "bookingReminder": "Rappel: Votre voyage à {destination} commence dans {days} jours",
+      "paymentPending": "Paiement en attente pour la réservation à {destination}",
+      "bookingCancelled": "Votre réservation à {destination} a été annulée",
+      "refundProcessed": "Remboursement traité pour le voyage à {destination}",
+      "flightUpdate": "Mise à jour du vol pour votre voyage à {destination}",
+      "hotelCheckIn": "Instructions d'enregistrement envoyées pour {destination}",
       "time": {
         "hoursAgo": "il y a {count} heures",
         "hourAgo": "il y a {count} heure",

@@ -5,12 +5,28 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { SkeletonTableRow, SkeletonCard } from '@/components/dashboard/SkeletonLoader'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { DatePickerInput } from '@/components/ui/date-picker'
+import PaymentDetailsModal from '@/components/dashboard/PaymentDetailsModal'
+
+interface Transaction {
+  id: number
+  type: 'Payment' | 'Refund'
+  descriptionKey: string
+  amount: string
+  date: string
+  status: 'Completed' | 'Pending'
+  method: 'Credit Card' | 'Debit Card' | 'PayPal'
+}
 
 const Payments = () => {
   const { t } = useLanguage()
   const [currentPage, setCurrentPage] = useState(1)
   const [statusFilter, setStatusFilter] = useState<'All' | 'Completed' | 'Pending'>('All')
+  const [startDate, setStartDate] = useState<Date | null>(null)
+  const [endDate, setEndDate] = useState<Date | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const itemsPerPage = 10
 
   useEffect(() => {
@@ -20,7 +36,7 @@ const Payments = () => {
     return () => clearTimeout(timer)
   }, [])
 
-  const transactions = [
+  const transactions: Transaction[] = [
     { id: 1, type: 'Payment', descriptionKey: 'dashboard.payments.descriptions.parisTrip', amount: '-$1,200', date: '2026-01-15', status: 'Completed', method: 'Credit Card' },
     { id: 2, type: 'Refund', descriptionKey: 'dashboard.payments.descriptions.cancelledLondonTrip', amount: '+$1,400', date: '2025-12-20', status: 'Completed', method: 'Credit Card' },
     { id: 3, type: 'Payment', descriptionKey: 'dashboard.payments.descriptions.tokyoTrip', amount: '-$2,100', date: '2026-01-20', status: 'Pending', method: 'PayPal' },
@@ -48,15 +64,43 @@ const Payments = () => {
     { id: 25, type: 'Payment', descriptionKey: 'dashboard.payments.descriptions.baliTrip', amount: '-$1,100', date: '2025-03-10', status: 'Completed', method: 'Credit Card' },
   ]
 
-  // Filter transactions by status
-  const filteredTransactions = statusFilter === 'All' 
-    ? transactions 
-    : transactions.filter(t => t.status === statusFilter)
+  const getMethodKey = (method: string): string => {
+    const methodMap: Record<string, string> = {
+      'Credit Card': 'dashboard.payments.methods.creditCard',
+      'Debit Card': 'dashboard.payments.methods.debitCard',
+      'PayPal': 'dashboard.payments.methods.paypal',
+    }
+    return methodMap[method] || method
+  }
+
+  // Filter transactions by status and date range
+  const filteredTransactions = transactions.filter(t => {
+    // Status filter
+    const statusMatch = statusFilter === 'All' || t.status === statusFilter
+    
+    // Date range filter
+    let dateMatch = true
+    if (startDate || endDate) {
+      const transactionDate = new Date(t.date)
+      if (startDate) {
+        const start = new Date(startDate)
+        start.setHours(0, 0, 0, 0)
+        if (transactionDate < start) dateMatch = false
+      }
+      if (endDate) {
+        const end = new Date(endDate)
+        end.setHours(23, 59, 59, 999)
+        if (transactionDate > end) dateMatch = false
+      }
+    }
+    
+    return statusMatch && dateMatch
+  })
 
   // Reset to page 1 when filter changes
   useEffect(() => {
     setCurrentPage(1)
-  }, [statusFilter])
+  }, [statusFilter, startDate, endDate])
 
   // Pagination logic for filtered transactions
   const totalPages = Math.ceil(filteredTransactions.length / itemsPerPage) || 1
@@ -89,9 +133,9 @@ const Payments = () => {
 
         {/* Table Skeleton */}
         <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="h-6 w-48 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
-            <div className="h-10 w-64 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
+            <div className="h-10 w-full sm:w-64 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -126,59 +170,166 @@ const Payments = () => {
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
-          <p className="text-sm text-gray-600 dark:text-gray-400">{t('dashboard.payments.summary.totalSpent')}</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
-            ${totalSpent.toLocaleString()}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div 
+          className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 cursor-pointer transition-all hover:shadow-lg ${
+            statusFilter === 'All' ? 'ring-2 ring-emerald-500' : ''
+          }`}
+          onClick={() => {
+            setStatusFilter('All')
+            setCurrentPage(1)
+          }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-xl text-gray-600 dark:text-gray-400">{t('dashboard.payments.filter.all')}</p>
+            <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg">
+              <svg className="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+          </div>
+          <p className="text-4xl font-bold text-gray-900 dark:text-white">
+            {transactions.length}
+          </p>
+          <p className="text-base text-gray-500 dark:text-gray-400 mt-1">
+            {transactions.filter(t => t.type === 'Payment').length} {t('dashboard.payments.type.payment_plural').toLowerCase()}, {transactions.filter(t => t.type === 'Refund').length} {t('dashboard.payments.type.refund_plural').toLowerCase()}
           </p>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
-          <p className="text-sm text-gray-600 dark:text-gray-400">{t('dashboard.payments.summary.pendingPayments')}</p>
-          <p className="text-2xl font-bold text-yellow-600 dark:text-yellow-400 mt-2">
+        <div 
+          className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 cursor-pointer transition-all hover:shadow-lg ${
+            statusFilter === 'Completed' ? 'ring-2 ring-emerald-500' : ''
+          }`}
+          onClick={() => {
+            setStatusFilter('Completed')
+            setCurrentPage(1)
+          }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-xl text-gray-600 dark:text-gray-400">{t('dashboard.payments.status.completed')}</p>
+            <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
+              <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+          <p className="text-5xl font-bold text-emerald-600 dark:text-emerald-400">
+            {transactions.filter(t => t.status === 'Completed').length}
+          </p>
+          <p className="text-lg text-gray-500 dark:text-gray-400 mt-1">
+            ${transactions
+              .filter(t => t.status === 'Completed' && t.type === 'Payment')
+              .reduce((sum, t) => {
+                const amountStr = t.amount.replace(/[^0-9.]/g, '')
+                return sum + (parseFloat(amountStr) || 0)
+              }, 0)
+              .toLocaleString()} {t('dashboard.payments.summary.spent')}
+          </p>
+        </div>
+        <div 
+          className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 cursor-pointer transition-all hover:shadow-lg ${
+            statusFilter === 'Pending' ? 'ring-2 ring-emerald-500' : ''
+          }`}
+          onClick={() => {
+            setStatusFilter('Pending')
+            setCurrentPage(1)
+          }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-xl text-gray-600 dark:text-gray-400">{t('dashboard.payments.status.pending')}</p>
+            <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
+              <svg className="w-5 h-5 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+          <p className="text-5xl font-bold text-yellow-600 dark:text-yellow-400">
+            {transactions.filter(t => t.status === 'Pending').length}
+          </p>
+          <p className="text-lg text-gray-500 dark:text-gray-400 mt-1">
             ${transactions
               .filter(t => t.status === 'Pending')
               .reduce((sum, t) => {
                 const amountStr = t.amount.replace(/[^0-9.]/g, '')
                 return sum + (parseFloat(amountStr) || 0)
               }, 0)
-              .toLocaleString()}
-          </p>
-        </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
-          <p className="text-sm text-gray-600 dark:text-gray-400">{t('dashboard.payments.summary.totalTransactions')}</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
-            {transactions.length}
+              .toLocaleString()} {t('dashboard.payments.summary.pending')}
           </p>
         </div>
       </div>
 
       {/* Transactions Table */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-        <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{t('dashboard.payments.transactionHistory')}</h2>
-          {/* Status Filter */}
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-600 dark:text-gray-400 mr-2">{t('dashboard.payments.filter.status')}:</span>
-            <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
-              {(['All', 'Completed', 'Pending'] as const).map((status) => (
-                <button
-                  key={status}
-                  onClick={() => {
-                    setStatusFilter(status)
-                    setCurrentPage(1)
-                  }}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                    statusFilter === status
-                      ? 'bg-white dark:bg-gray-800 text-emerald-600 dark:text-emerald-400 shadow-sm'
-                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                  }`}
-                >
-                  {status === 'All' 
-                    ? t('dashboard.payments.filter.all')
-                    : t(`dashboard.payments.status.${status.toLowerCase()}`)}
-                </button>
-              ))}
+      <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{t('dashboard.payments.transactionHistory')}</h2>
+              {/* Status Filter */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2">
+                <span className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">{t('dashboard.payments.filter.status')}:</span>
+                <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1 flex-wrap">
+                  {(['All', 'Completed', 'Pending'] as const).map((status) => (
+                    <button
+                      key={status}
+                      onClick={() => {
+                        setStatusFilter(status)
+                        setCurrentPage(1)
+                      }}
+                      className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
+                        statusFilter === status
+                          ? 'bg-white dark:bg-gray-800 text-emerald-600 dark:text-emerald-400 shadow-sm'
+                          : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                      }`}
+                    >
+                      {status === 'All' 
+                        ? t('dashboard.payments.filter.all')
+                        : t(`dashboard.payments.status.${status.toLowerCase()}`)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* Date Range Filter */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
+                  <svg className="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">{t('dashboard.payments.filter.dateRange')}</span>
+              </div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-1">
+                <DatePickerInput
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  placeholder={t('dashboard.payments.filter.from')}
+                />
+                <DatePickerInput
+                  selected={endDate}
+                  onChange={(date) => setEndDate(date)}
+                  placeholder={t('dashboard.payments.filter.to')}
+                  minDate={startDate || undefined}
+                />
+                {(startDate || endDate) && (
+                  <div className="flex items-end">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setStartDate(null)
+                        setEndDate(null)
+                        setCurrentPage(1)
+                      }}
+                      className="whitespace-nowrap h-[42px] px-4 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-200"
+                    >
+                      <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                      {t('dashboard.payments.filter.clear')}
+                    </Button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -205,7 +356,14 @@ const Payments = () => {
             </thead>
             <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
               {paginatedTransactions.map((transaction) => (
-                <tr key={transaction.id} className="hover:bg-gray-50 dark:hover:bg-gray-900/50">
+                <tr 
+                  key={transaction.id} 
+                  className="hover:bg-gray-50 dark:hover:bg-gray-900/50 cursor-pointer transition-colors"
+                  onClick={() => {
+                    setSelectedTransaction(transaction)
+                    setIsModalOpen(true)
+                  }}
+                >
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
                     {transaction.date}
                   </td>
@@ -213,7 +371,7 @@ const Payments = () => {
                     {t(transaction.descriptionKey)}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
-                    {transaction.method}
+                    {t(getMethodKey(transaction.method))}
                   </td>
                   <td
                     className={`px-6 py-4 whitespace-nowrap text-sm font-semibold ${
@@ -291,6 +449,15 @@ const Payments = () => {
           </div>
         )}
       </div>
+
+      <PaymentDetailsModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false)
+          setSelectedTransaction(null)
+        }}
+        transaction={selectedTransaction}
+      />
     </div>
   )
 }

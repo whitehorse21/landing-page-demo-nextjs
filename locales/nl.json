@@ -198,7 +198,15 @@
         "spendingTrend": "Uitgaventrend"
       },
       "recentBookings": "Recente Boekingen",
-      "departure": "Vertrek"
+      "departure": "Vertrek",
+      "recentReviews": "Recente Beoordelingen",
+      "reviewedOn": "Beoordeeld op",
+      "recentMessages": "Recente Berichten",
+      "recentNews": "Recente Nieuws",
+      "tabs": {
+        "bookings": "Boekingen",
+        "reviews": "Beoordelingen"
+      }
     },
     "browseCities": {
       "title": "Steden Bladeren",
@@ -207,20 +215,28 @@
       "bookNow": "Nu Boeken",
       "perNight": "per nacht",
       "loadMore": "Meer Laden",
-      "moreAvailable": "meer beschikbaar"
+      "moreAvailable": "meer beschikbaar",
+      "gridView": "Rasterweergave",
+      "listView": "Lijstweergave"
     },
     "bookings": {
       "title": "Mijn Boekingen",
       "subtitle": "Beheer je huidige en eerdere reisboekingen",
-      "tabs": {
-        "current": "Huidig",
-        "past": "Verleden"
+      "filter": {
+        "status": "Filteren op Status",
+        "all": "Alle"
       },
       "fields": {
         "checkIn": "Inchecken",
         "checkOut": "Uitchecken",
         "guests": "Gasten",
         "bookingId": "Boekings-ID"
+      },
+      "table": {
+        "destination": "Bestemming",
+        "amount": "Bedrag",
+        "status": "Status",
+        "actions": "Acties"
       },
       "status": {
         "confirmed": "Bevestigd",
@@ -242,6 +258,22 @@
           "downloadReceipt": "Bon Downloaden",
           "cancelBooking": "Boeking Annuleren"
         }
+      },
+      "review": {
+        "title": "Laat een Beoordeling Achter",
+        "yourReview": "Jouw Beoordeling",
+        "rating": "Beoordeling",
+        "comment": "Opmerking",
+        "commentPlaceholder": "Deel je ervaring...",
+        "submit": "Beoordeling Verzenden",
+        "submitting": "Verzenden...",
+        "submitted": "Beoordeling Verzonden",
+        "submittedMessage": "Bedankt voor je beoordeling!",
+        "alreadyReviewed": "Je hebt deze boeking al beoordeeld",
+        "viewReview": "Bekijk Je Beoordeling",
+        "postedOn": "Geplaatst op",
+        "edit": "Beoordeling Bewerken",
+        "delete": "Beoordeling Verwijderen"
       },
       "pagination": {
         "showing": "Tonen",
@@ -284,7 +316,31 @@
       },
       "type": {
         "payment": "Betaling",
-        "refund": "Reembolso"
+        "refund": "Terugbetaling",
+        "payment_plural": "Betalingen",
+        "refund_plural": "Terugbetalingen"
+      },
+      "methods": {
+        "creditCard": "Creditcard",
+        "debitCard": "Debetkaart",
+        "paypal": "PayPal"
+      },
+      "summary": {
+        "spent": "uitgegeven",
+        "pending": "in behandeling"
+      },
+      "details": {
+        "title": "Transactiedetails",
+        "transactionId": "Transactie ID",
+        "description": "Beschrijving",
+        "type": "Type",
+        "method": "Betalingsmethode",
+        "date": "Datum",
+        "amount": "Bedrag",
+        "actions": {
+          "downloadReceipt": "Bon Downloaden",
+          "requestRefund": "Terugbetaling Aanvragen"
+        }
       },
       "descriptions": {
         "parisTrip": "Parijs Reisboeking",
@@ -325,7 +381,23 @@
       "online": "Online",
       "selectConversation": "Selecteer een gesprek om te beginnen met chatten",
       "typeMessage": "Typ een bericht...",
-      "send": "Verzenden"
+      "send": "Verzenden",
+      "attach": "Bijvoegen",
+      "attachImage": "Afbeelding Bijvoegen",
+      "attachVideo": "Video Bijvoegen",
+      "attachFile": "Bestand Bijvoegen",
+      "attachGif": "GIF Bijvoegen",
+      "attachSticker": "Sticker Bijvoegen",
+      "selectGif": "Selecteer een GIF",
+      "selectSticker": "Selecteer een Sticker",
+      "viewFullScreen": "Bekijk op Volledig Scherm",
+      "fullScreenImage": "Afbeelding op Volledig Scherm",
+      "fullScreenVideo": "Video op Volledig Scherm",
+      "closeFullScreen": "Sluit Volledig Scherm",
+      "errors": {
+        "invalidImage": "Selecteer alstublieft een geldig afbeeldingsbestand",
+        "invalidVideo": "Selecteer alstublieft een geldig videobestand"
+      }
     },
     "settings": {
       "title": "Instellingen",
@@ -384,6 +456,13 @@
       "bookingConfirmed": "Je boeking naar {destination} is bevestigd",
       "paymentReceived": "Betaling ontvangen voor {destination} reis",
       "newMessage": "Nieuw bericht van reisagent",
+      "reviewRequest": "Laat alstublieft een beoordeling achter voor uw {destination} reis",
+      "bookingReminder": "Herinnering: Uw reis naar {destination} begint over {days} dagen",
+      "paymentPending": "Betaling in behandeling voor {destination} boeking",
+      "bookingCancelled": "Je boeking naar {destination} is geannuleerd",
+      "refundProcessed": "Terugbetaling verwerkt voor {destination} reis",
+      "flightUpdate": "Vluchtupdate voor uw {destination} reis",
+      "hotelCheckIn": "Check-in instructies verzonden voor {destination}",
       "time": {
         "hoursAgo": "{count} uur geleden",
         "hourAgo": "{count} uur geleden",

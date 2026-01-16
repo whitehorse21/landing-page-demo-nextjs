@@ -198,7 +198,15 @@
         "spendingTrend": "Spending Trend"
       },
       "recentBookings": "Recent Bookings",
-      "departure": "Departure"
+      "departure": "Departure",
+      "recentReviews": "Recent Reviews",
+      "reviewedOn": "Reviewed on",
+      "recentMessages": "Recent Messages",
+      "recentNews": "Recent News",
+      "tabs": {
+        "bookings": "Bookings",
+        "reviews": "Reviews"
+      }
     },
     "browseCities": {
       "title": "Browse Cities",
@@ -207,20 +215,32 @@
       "bookNow": "Book Now",
       "perNight": "per night",
       "loadMore": "Load More",
-      "moreAvailable": "more available"
+      "moreAvailable": "more available",
+      "gridView": "Grid View",
+      "listView": "List View"
     },
     "bookings": {
       "title": "My Bookings",
       "subtitle": "Manage your current and past travel bookings",
-      "tabs": {
-        "current": "Current",
-        "past": "Past"
+      "filter": {
+        "status": "Filter by Status",
+        "all": "All",
+        "dateRange": "Date Range",
+        "from": "From",
+        "to": "To",
+        "clear": "Clear"
       },
       "fields": {
         "checkIn": "Check-in",
         "checkOut": "Check-out",
         "guests": "Guests",
         "bookingId": "Booking ID"
+      },
+      "table": {
+        "destination": "Destination",
+        "amount": "Amount",
+        "status": "Status",
+        "actions": "Actions"
       },
       "status": {
         "confirmed": "Confirmed",
@@ -242,6 +262,22 @@
           "downloadReceipt": "Download Receipt",
           "cancelBooking": "Cancel Booking"
         }
+      },
+      "review": {
+        "title": "Leave a Review",
+        "yourReview": "Your Review",
+        "rating": "Rating",
+        "comment": "Comment",
+        "commentPlaceholder": "Share your experience...",
+        "submit": "Submit Review",
+        "submitting": "Submitting...",
+        "submitted": "Review Submitted",
+        "submittedMessage": "Thank you for your review!",
+        "alreadyReviewed": "You've already reviewed this booking",
+        "viewReview": "View Your Review",
+        "postedOn": "Posted on",
+        "edit": "Edit Review",
+        "delete": "Delete Review"
       },
       "pagination": {
         "showing": "Showing",
@@ -280,11 +316,39 @@
       },
       "filter": {
         "status": "Filter by Status",
-        "all": "All"
+        "all": "All",
+        "dateRange": "Date Range",
+        "from": "From",
+        "to": "To",
+        "clear": "Clear"
       },
       "type": {
         "payment": "Payment",
-        "refund": "Refund"
+        "refund": "Refund",
+        "payment_plural": "Payments",
+        "refund_plural": "Refunds"
+      },
+      "methods": {
+        "creditCard": "Credit Card",
+        "debitCard": "Debit Card",
+        "paypal": "PayPal"
+      },
+      "summary": {
+        "spent": "spent",
+        "pending": "pending"
+      },
+      "details": {
+        "title": "Transaction Details",
+        "transactionId": "Transaction ID",
+        "description": "Description",
+        "type": "Type",
+        "method": "Payment Method",
+        "date": "Date",
+        "amount": "Amount",
+        "actions": {
+          "downloadReceipt": "Download Receipt",
+          "requestRefund": "Request Refund"
+        }
       },
       "descriptions": {
         "parisTrip": "Paris Trip Booking",
@@ -325,7 +389,23 @@
       "online": "Online",
       "selectConversation": "Select a conversation to start chatting",
       "typeMessage": "Type a message...",
-      "send": "Send"
+      "send": "Send",
+      "attach": "Attach",
+      "attachImage": "Attach Image",
+      "attachVideo": "Attach Video",
+      "attachFile": "Attach File",
+      "attachGif": "Attach GIF",
+      "attachSticker": "Attach Sticker",
+      "selectGif": "Select a GIF",
+      "selectSticker": "Select a Sticker",
+      "viewFullScreen": "View Full Screen",
+      "fullScreenImage": "Full Screen Image",
+      "fullScreenVideo": "Full Screen Video",
+      "closeFullScreen": "Close Full Screen",
+      "errors": {
+        "invalidImage": "Please select a valid image file",
+        "invalidVideo": "Please select a valid video file"
+      }
     },
     "settings": {
       "title": "Settings",
@@ -384,6 +464,13 @@
       "bookingConfirmed": "Your booking to {destination} has been confirmed",
       "paymentReceived": "Payment received for {destination} trip",
       "newMessage": "New message from travel agent",
+      "reviewRequest": "Please leave a review for your {destination} trip",
+      "bookingReminder": "Reminder: Your trip to {destination} starts in {days} days",
+      "paymentPending": "Payment pending for {destination} booking",
+      "bookingCancelled": "Your booking to {destination} has been cancelled",
+      "refundProcessed": "Refund processed for {destination} trip",
+      "flightUpdate": "Flight update for your {destination} trip",
+      "hotelCheckIn": "Check-in instructions sent for {destination}",
       "time": {
         "hoursAgo": "{count} hours ago",
         "hourAgo": "{count} hour ago",
