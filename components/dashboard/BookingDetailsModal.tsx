@@ -44,9 +44,6 @@ const BookingDetailsModal = ({ isOpen, onClose, booking }: BookingDetailsModalPr
   // Define currentBooking early so it can be used throughout the component
   const currentBooking = bookingWithReview || booking
 
-  // Early return if no booking is available
-  if (!currentBooking) return null
-
   const getCityId = (destination: string): number => {
     const cityMap: Record<string, number> = {
       'Paris, France': 1,
@@ -153,7 +150,7 @@ const BookingDetailsModal = ({ isOpen, onClose, booking }: BookingDetailsModalPr
     )
   }
 
-  if (!booking) return null
+  if (!booking || !currentBooking) return null
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => {
