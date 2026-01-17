@@ -201,11 +201,6 @@ const AboutUs = () => {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-8">
-              <button className="px-8 py-3 bg-primary dark:bg-emerald-500 text-white rounded-lg text-lg font-semibold hover:bg-primary-dark dark:hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:scale-105">
-                Explore More Destinations →
-              </button>
-            </div>
           </div>
         </div>
       </div>
