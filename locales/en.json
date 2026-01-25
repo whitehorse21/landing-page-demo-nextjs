@@ -64,6 +64,14 @@
       "rating": "Rating"
     }
   },
+  "video": {
+    "badge": "AI Generated Experience",
+    "title": "Discover Your Next Adventure",
+    "description": "Experience the world through AI-generated travel content that brings destinations to life.",
+    "feature1": "HD Quality",
+    "feature2": "AI Generated",
+    "feature3": "Travel Focused"
+  },
   "about": {
     "title": "About Us",
     "heading": "Explore All Corners Of The",

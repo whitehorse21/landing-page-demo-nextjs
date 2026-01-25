@@ -64,6 +64,14 @@
       "rating": "Beoordeling"
     }
   },
+  "video": {
+    "badge": "AI-gegenereerde Ervaring",
+    "title": "Ontdek Je Volgende Avontuur",
+    "description": "Ervaar de wereld door AI-gegenereerde reisinhoud die bestemmingen tot leven brengt.",
+    "feature1": "HD Kwaliteit",
+    "feature2": "AI-gegenereerd",
+    "feature3": "Reisgericht"
+  },
   "about": {
     "title": "Over Ons",
     "heading": "Verken Alle Hoeken Van De",

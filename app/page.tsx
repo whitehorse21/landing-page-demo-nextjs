@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import VideoSection from '@/components/VideoSection'
 import AboutUs from '@/components/AboutUs'
 import Services from '@/components/Services'
 import Blog from '@/components/Blog'
@@ -31,8 +32,9 @@ export default function Home() {
       <Header />
       <Hero onOpenLoginModal={handleOpenLoginModal} />
       <SectionSeparator variant="dots" />
-      <AboutUs />
+      <VideoSection />
       <SectionSeparator variant="waves" />
+      <AboutUs />
       <Services />
       <SectionSeparator variant="particles" />
       <Blog />

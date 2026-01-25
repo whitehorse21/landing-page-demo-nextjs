@@ -64,6 +64,14 @@
       "rating": "Calificación"
     }
   },
+  "video": {
+    "badge": "Experiencia Generada por IA",
+    "title": "Descubre Tu Próxima Aventura",
+    "description": "Experimenta el mundo a través de contenido de viaje generado por IA que da vida a los destinos.",
+    "feature1": "Calidad HD",
+    "feature2": "Generado por IA",
+    "feature3": "Enfocado en Viajes"
+  },
   "about": {
     "title": "Nosotros",
     "heading": "Explora Todos Los Rincones Del",
