@@ -64,6 +64,14 @@
       "rating": "Note"
     }
   },
+  "video": {
+    "badge": "Expérience Générée par IA",
+    "title": "Découvrez Votre Prochaine Aventure",
+    "description": "Découvrez le monde à travers du contenu de voyage généré par IA qui donne vie aux destinations.",
+    "feature1": "Qualité HD",
+    "feature2": "Généré par IA",
+    "feature3": "Axé sur les Voyages"
+  },
   "about": {
     "title": "À Propos",
     "heading": "Explorez Tous Les Coins Du",
